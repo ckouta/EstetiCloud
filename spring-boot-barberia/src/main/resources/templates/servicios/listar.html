@@ -74,7 +74,7 @@ desired effect
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
-				<h1 th:text="${titulo}"></h1>
+				<h1 th:text="${titulo}" align="center"></h1>
 
 			</section>
 
@@ -84,11 +84,11 @@ desired effect
 				<section class="content">
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="box">
+							<div class="box box-info">
 								<div class="box-header">
 									<h3 class="box-title"></h3>
 									<a th:href="@{/servicios/form}"
-										class="btn bg-green btn-flat margin btn-xl pull-right"
+										class="btn btn-success btn-flat margin btn-xl pull-right"
 										th:text="'Crear servicio'"></a>
 								</div>
 								<!-- /.box-header -->
@@ -100,7 +100,7 @@ desired effect
 												<tr>
 													<th>Id</th>
 													<th>Nombre</th>
-													<th>Duracion</th>
+													<th>Duración</th>
 													<th>Precio</th>
 													<th>Acciones</th>
 												</tr>
@@ -111,12 +111,12 @@ desired effect
 													<td th:text="${servicio.nombre}"></td>
 													<td th:text="${servicio.duracion}"></td>
 													<td th:text="${servicio.precio}"></td>
-													<td><a class="btn bg-orange btn-flat margin"
+													<td><a class="btn btn-info btn-flat margin"
 														th:href="@{/servicios/form/} + ${servicio.id}"
-														th:text="#{text.servi.editar}"></a> <a
-														class="btn bg-maroon btn-flat margin"
+														th:text="'Editar'"></a> <a
+														class="btn btn-danger btn-flat margin"
 														th:href="@{/servicios/eliminar/} + ${servicio.id}"
-														th:text="#{text.servi.eliminar}"
+														th:text="'Eliminar'"
 														onclick="return confirm('¿Estás seguro que quieres eliminar el servicio?');"></a>
 													</td>
 												</tr>
@@ -125,7 +125,7 @@ desired effect
 												<tr>
 													<th>Id</th>
 													<th>Nombre</th>
-													<th>Duracion</th>
+													<th>Duración</th>
 													<th>Precio</th>
 													<th>Acciones</th>
 												</tr>

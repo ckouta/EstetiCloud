@@ -19,39 +19,35 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
-		/*
-		 * // set our response to OK status
-		 * response.setStatus(HttpServletResponse.SC_OK);
-		 * 
-		 * boolean admin = false;
-		 * 
-		 * logger.info("AT onAuthenticationSuccess(...) function!");
-		 * 
-		 * for (GrantedAuthority auth : authentication.getAuthorities()) { if
-		 * ("ROLE_ADMIN".equals(auth.getAuthority())) { admin = true; } }
-		 * 
-		 * if (admin) { response.sendRedirect("/barbero/listar"); } else {
-		 * response.sendRedirect("/user"); }
-		 * 
-		 */
+
+		// set our response to OK status
+		response.setStatus(HttpServletResponse.SC_OK);
 
 		SessionFlashMapManager flashMapManager = new SessionFlashMapManager();
 
 		FlashMap flashMap = new FlashMap();
 
-	
-		String mensaje = String.format("text.login.success");
-				
+		String mensaje = String.format("Sesión iniciada con éxito, Usuaria: " + authentication.getName());
 
 		flashMap.put("success", mensaje);
 
 		flashMapManager.saveOutputFlashMap(flashMap, request, response);
 
-		if (authentication != null) {
-			logger.info(mensaje);
+		boolean admin = false;
+
+		logger.info("AT onAuthenticationSuccess(...) function!");
+
+		for (GrantedAuthority auth : authentication.getAuthorities()) {
+			if ("ROLE_ADMIN".equals(auth.getAuthority())) {
+				admin = true;
+			}
 		}
 
-		super.onAuthenticationSuccess(request, response, authentication);
+		if (admin) {
+			response.sendRedirect("/barbero/listar");
+		} else {
+			response.sendRedirect("/cliente/listar");
+		}
 
 	}
 

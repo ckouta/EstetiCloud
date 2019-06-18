@@ -36,7 +36,7 @@ public class ServicioController {
 	 //listar servicios
 		@GetMapping(value ="/listar")
 		public String listar(Model model) {
-			model.addAttribute("titulo", "Listado de servicio");
+			model.addAttribute("titulo", "Listado de servicios");
 			model.addAttribute("servicio", servicioService.findAll());
 			return "servicios/listar";
 		}
@@ -87,7 +87,6 @@ public class ServicioController {
 	//eliminar servicio
 	@RequestMapping(value="/eliminar/{id}")
 	public String eliminar(@PathVariable(value="id") Long id, RedirectAttributes flash) {
-		
 		if(id > 0) {
 			servicioService.delete(id);
 			flash.addFlashAttribute("success", "servicio eliminado con éxito!");

@@ -62,10 +62,12 @@
 					<li sec:authorize="isAuthenticated()">
 						<!-- <script type="text/javascript">
 	               window.location = "/barbero/listar";
-	          </script>--> <a th:href="@{/barbero/listar}"
+	          </script>--> <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/barbero/listar}"
+						class="btn btn-primary py-3 px-5">Ir a la Gestión de la Barbería Style</a>
+						
+						<a sec:authorize="hasRole('ROLE_USER')" th:href="@{/cliente/listar}"
 						class="btn btn-primary py-3 px-5">Ir a la Gestión de la Barbería Style</a>
 					</li>
-
 					<li sec:authorize="!isAuthenticated()"><a th:href="@{/login}"
 						class="btn btn-primary py-3 px-5">Iniciar Sesión</a></li>
 				</ul>
@@ -179,107 +181,24 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
-					<div class="pricing-entry ftco-animate">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div class="pricing-entry ftco-animate" th:each="servicio: ${servicios}">
 						<div class="d-flex text align-items-center">
 							<h3>
-								<span>Men's Haircut</span>
+								<span th:text="${servicio.nombre}"></span>
 							</h3>
-							<span class="price">$20.00</span>
+							<span class="price" th:text="'$'+${servicio.precio}"></span>
 						</div>
-						<div class="d-block">
-							<p>A small river named Duden flows by their place and
-								supplies</p>
+						<div class="d-block" >
+							<p th:text="'Duración: '+${servicio.duracion}+' minutos'"></p>
 						</div>
 					</div>
-					<div class="pricing-entry ftco-animate">
-						<div class="d-flex text align-items-center">
-							<h3>
-								<span>Children Haircut</span>
-							</h3>
-							<span class="price">$29.00</span>
-						</div>
-						<div class="d-block">
-							<p>A small river named Duden flows by their place and
-								supplies</p>
-						</div>
-					</div>
-					<div class="pricing-entry ftco-animate">
-						<div class="d-flex text align-items-center">
-							<h3>
-								<span>Beard Cut</span>
-							</h3>
-							<span class="price">$20.00</span>
-						</div>
-						<div class="d-block">
-							<p>A small river named Duden flows by their place and
-								supplies</p>
-						</div>
-					</div>
-					<div class="pricing-entry ftco-animate">
-						<div class="d-flex text align-items-center">
-							<h3>
-								<span>Men's Haircut</span>
-							</h3>
-							<span class="price">$20.00</span>
-						</div>
-						<div class="d-block">
-							<p>A small river named Duden flows by their place and
-								supplies</p>
-						</div>
-					</div>
+					
 				</div>
+				<div class="col-md-2"></div>
 
-				<div class="col-md-6">
-					<div class="pricing-entry ftco-animate">
-						<div class="d-flex text align-items-center">
-							<h3>
-								<span>Women's Haircut</span>
-							</h3>
-							<span class="price">$49.91</span>
-						</div>
-						<div class="d-block">
-							<p>A small river named Duden flows by their place and
-								supplies</p>
-						</div>
-					</div>
-					<div class="pricing-entry ftco-animate">
-						<div class="d-flex text align-items-center">
-							<h3>
-								<span>Men's Haircut</span>
-							</h3>
-							<span class="price">$20.00</span>
-						</div>
-						<div class="d-block">
-							<p>A small river named Duden flows by their place and
-								supplies</p>
-						</div>
-					</div>
-					<div class="pricing-entry ftco-animate">
-						<div class="d-flex text align-items-center">
-							<h3>
-								<span>Men's Haircut</span>
-							</h3>
-							<span class="price">$20.00</span>
-						</div>
-						<div class="d-block">
-							<p>A small river named Duden flows by their place and
-								supplies</p>
-						</div>
-					</div>
-					<div class="pricing-entry ftco-animate">
-						<div class="d-flex text align-items-center">
-							<h3>
-								<span>Men's Haircut</span>
-							</h3>
-							<span class="price">$20.00</span>
-						</div>
-						<div class="d-block">
-							<p>A small river named Duden flows by their place and
-								supplies</p>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</section>

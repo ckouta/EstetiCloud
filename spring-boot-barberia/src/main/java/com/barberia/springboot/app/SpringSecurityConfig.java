@@ -42,7 +42,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/**","/index/**","/barbero/**","/bower_components/**","/dist/**","/layout/**","/plugins/**","/toastr.min.css","/toastr.min.js").permitAll()
 				.anyRequest().authenticated().and().formLogin()
 				.successHandler(successHandler)
-				.loginPage("/login").defaultSuccessUrl("/barbero/listar")
+				.loginPage("/login")
 				.permitAll().and()
 				.logout().permitAll().and()
 				.exceptionHandling().accessDeniedPage("/error_403");

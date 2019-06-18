@@ -22,10 +22,22 @@ INSERT INTO clientes (apellido,email,nombre,telefono) VALUES ("Perry, Lael S.","
 INSERT INTO clientes (apellido,email,nombre,telefono) VALUES ("Jenkins, Moses J.","nec.ante.blandit@nibhPhasellus.org","Xaviera","1-864-888-958");
 INSERT INTO clientes (apellido,email,nombre,telefono) VALUES ("Watson, Hasad U.","nec.ante@cursus.com","Quynn","1-719-293-395");
 
+/*insert servicios*/
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Corte de Cabello",3000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Perfilado de barba",3000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Afeitado al ras",3000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Afeitado Clásico",3000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Arreglo de Barba",4000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Degradado",4000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (30,"Corte Clásico + Barba",7000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (30,"Rasurado de Cabeza + Barba",7000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (30,"Degradado + Barba",8000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (0,"Gift Card",0);
+
+
 /*Creamos usuarios y sus roles*/
-INSERT INTO users (username, password, enabled) VALUES('pipe', '$2a$10$HUuNeObsc5iqan95ZfmPjOB8nO51Q4TErr6o7ALlr9FbwFWY6LBpO', 1);
+INSERT INTO users (username, password, enabled) VALUES('secretaria', '$2a$10$HUuNeObsc5iqan95ZfmPjOB8nO51Q4TErr6o7ALlr9FbwFWY6LBpO', 1);
 INSERT INTO users (username, password, enabled) VALUES('admin','$2a$10$VCpIQGDiFwthrX2HQAC.E.5Jete/BSMkNOywJFx5sbO2XvxoJ7Pdq', 1);
 
 INSERT INTO authorities (user_id, authority) VALUES(1, 'ROLE_USER');
-INSERT INTO authorities (user_id, authority) VALUES(2, 'ROLE_USER');
 INSERT INTO authorities (user_id, authority) VALUES(2, 'ROLE_ADMIN');

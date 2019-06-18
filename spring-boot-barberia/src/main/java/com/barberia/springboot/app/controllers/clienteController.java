@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.barberia.springboot.app.models.entity.Cliente;
 import com.barberia.springboot.app.models.service.IClienteService;
 
-@Secured("ROLE_ADMIN")
+@Secured("ROLE_USER")
 @Controller
 @RequestMapping("/cliente")
 @SessionAttributes("cliente")

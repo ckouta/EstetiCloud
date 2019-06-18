@@ -73,7 +73,7 @@ desired effect
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
-			<section class="content-header">
+			<section class="content-header" align="center">
 				<h1 th:text="${titulo}"></h1>
 
 			</section>
@@ -83,61 +83,83 @@ desired effect
 
 				<section class="content">
 					<div class="row">
+						
 						<div class="col-xs-12">
-							<div class="box">
+							<div class="box box-info">
 								<div class="box-header">
 									<h3 class="box-title"></h3>
-									<a th:href="@{/servicios/listar}"
-										class="btn bg-orange btn-flat margin btn-xl float-right"
-										th:text="'Volver'"></a>
+									<div class="col-sm-3"></div>
+									<div class="col-sm-6">
+										<a th:href="@{/servicios/listar}"
+											class="btn btn-primary btn-flat margin btn-xl float-right"
+											th:text="'Volver'"></a>
+									</div>
+									<div class="col-sm-3"></div>
 								</div>
 								<!-- /.box-header -->
 								<div class="box-body">
-									<form th:action="@{/servicios/form}" th:object="${servicio}" method="post">
+									<form th:action="@{/servicios/form}" th:object="${servicio}"
+										method="post">
 										<div class="form-group row">
-											<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+											<div class="col-sm-3"></div>
 											<div class="col-sm-6">
+												<label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
 												<input type="text" th:field="*{nombre}" class="form-control"
 													th:errorclass="'form-control alert-danger'" /> <small
 													class="form-text text-danger"
 													th:if="${#fields.hasErrors('nombre')}"
 													th:errors="*{nombre}"></small>
 											</div>
+											<div class="col-sm-3"></div>
 										</div>
 										<div class="form-group row">
-											<label for="duracion" class="col-sm-2 col-form-label">Duracion</label>
+											<div class="col-sm-3"></div>
+
 											<div class="col-sm-6">
-												<input type="text" th:field="*{duracion}"
+												<label for="duracion" class="col-sm-2 col-form-label">Duración:</label>
+												<input type="number" th:field="*{duracion}"
 													class="form-control"
 													th:errorclass="'form-control alert-danger'" /> <small
 													class="form-text text-danger"
 													th:if="${#fields.hasErrors('duracion')}"
 													th:errors="*{duracion}"></small>
 											</div>
+											<div class="col-sm-3"></div>
+
 										</div>
 										<div class="form-group row">
-											<label for="precio" class="col-sm-2 col-form-label">Precio</label>
+											<div class="col-sm-3"></div>
+
 											<div class="col-sm-6">
-												<input type="text" th:field="*{precio}" class="form-control"
+												<label for="precio" class="col-sm-2 col-form-label">Precio:</label>
+												<input type="number" th:field="*{precio}"
+													class="form-control"
 													th:errorclass="'form-control alert-danger'" /> <small
 													class="form-text text-danger"
 													th:if="${#fields.hasErrors('precio')}"
 													th:errors="*{precio}"></small>
 											</div>
+											<div class="col-sm-3"></div>
+
 										</div>
 										<div class="form-group row">
+											<div class="col-sm-3"></div>
+
 											<div class="col-sm-6">
 												<input type="submit" th:value="${titulo}"
-													class="btn bg-olive btn-flat margin" />
+													class="btn btn-success btn-flat margin" />
 											</div>
+											<div class="col-sm-3"></div>
+
 										</div>
-										
+
 									</form>
 								</div>
 								<!-- /.box-body -->
 							</div>
 							<!-- /.box -->
 						</div>
+						
 						<!-- /.col -->
 					</div>
 					<!-- /.row -->
