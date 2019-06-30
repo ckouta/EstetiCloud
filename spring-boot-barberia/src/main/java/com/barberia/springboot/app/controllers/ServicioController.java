@@ -27,7 +27,7 @@ import javax.validation.Valid;
 
 @Secured("ROLE_ADMIN")
 @Controller
-@RequestMapping("/servicios")
+@RequestMapping("/servicio")
 @SessionAttributes("servicio")
 public class ServicioController {
 
@@ -36,9 +36,9 @@ public class ServicioController {
 	 //listar servicios
 		@GetMapping(value ="/listar")
 		public String listar(Model model) {
-			model.addAttribute("titulo", "Listado de servicios");
+			model.addAttribute("titulo", "Listado de reserva");
 			model.addAttribute("servicio", servicioService.findAll());
-			return "servicios/listar";
+			return "reserva/listar";
 		}
 	//crear servicio
 	@GetMapping(value = "/form")
@@ -46,8 +46,8 @@ public class ServicioController {
 		System.out.print("paso al form");
 		Servicio servicio = new Servicio();
 		model.put("servicio", servicio);
-		model.put("titulo", "Crear servicio");
-		return "servicios/form";
+		model.put("titulo", "Crear reserva");
+		return "reserva/form";
 	}
 	//editar servicio
 	@RequestMapping(value="/form/{id}")
@@ -59,38 +59,38 @@ public class ServicioController {
 			servicio = servicioService.findOne(id);
 			if(servicio == null) {
 				flash.addFlashAttribute("error", "El ID del servicio no existe en la BBDD!");
-				return "redirect:/servicios/listar";
+				return "redirect:/servicio/listar";
 			}
 		} else {
 			flash.addFlashAttribute("error", "El ID del servicio no puede ser cero!");
-			return "redirect:/servicios/listar";
+			return "redirect:/servicio/listar";
 		}
 		model.put("servicio", servicio);
 		model.put("titulo", "Editar servicio");
-		return "servicios/form";
+		return "reserva/form";
 	}
 	//guardar servicio
 	@RequestMapping(value = "/form", method = RequestMethod.POST)
 	public String guardar(@Valid Servicio servicio, BindingResult result, Model model, RedirectAttributes flash, SessionStatus status) {
 		System.out.print("hora de guardar");
 		if (result.hasErrors()) {
-			model.addAttribute("titulo", "Crear Servicio");
-			return "servicios/form";
+			model.addAttribute("titulo", "Crear reserva");
+			return "reserva/form";
 		}
 		String mensajeFlash = (servicio.getId() != null)? "Servicio editado con éxito!" : "Servicio creado con éxito!";
 
 		servicioService.save(servicio);
 		status.setComplete();
 		flash.addFlashAttribute("success", mensajeFlash);
-		return "redirect:/servicios/listar";
+		return "redirect:/reserva/listar";
 	}
 	//eliminar servicio
 	@RequestMapping(value="/eliminar/{id}")
 	public String eliminar(@PathVariable(value="id") Long id, RedirectAttributes flash) {
 		if(id > 0) {
 			servicioService.delete(id);
-			flash.addFlashAttribute("success", "servicio eliminado con éxito!");
+			flash.addFlashAttribute("success", "Servicio eliminado con éxito!");
 		}
-		return "redirect:/servicios/listar";
+		return "redirect:/reserva/listar";
 	}
 }

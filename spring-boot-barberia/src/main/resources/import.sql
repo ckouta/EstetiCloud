@@ -1,14 +1,8 @@
-/* insert barberos*/
+﻿/* insert barberos*/
 INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Booth, Uma G.","lectus@mauriselit.edu","Allen","1-883-183-551");
 INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Wall, Nathan C.","egestas@utodiovel.co.uk","Stone","1-542-994-189");
 INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Dalton, Deanna U.","vitae@tincidunt.net","Luke","1-358-484-158");
 INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Matthews, Cade A.","rutrultrices@ac.net","Keefe","1-186-661-529");
-INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Conway, Farrah W.","et.lacinia@etla.co.uk","Wynter","1-487-309-592");
-INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Gilliam, Kirby O.","facilorci@vitaeali.org","Kirby","1-720-484-375");
-INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Holt, Kane Y.","urna@magna","Roth","1-668-825-872");
-INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Guzman, Adria M.","porta.eli@augueport.edu","Jerry","1-779-591-256");
-INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Harvey, Thor B.","enim@aultricies.ca","Bevis","1-819-606-998");
-INSERT INTO barberos (apellido,email,nombre,telefono) VALUES ("Cantrell, Baker O.","Vivamus@Crasint.ca","Debra","1-521-178-719");
 
 /*insert clientes*/
 INSERT INTO clientes (apellido,email,nombre,telefono) VALUES ("Holt, Kane Y.","urna.et.arcu@magnamalesuada.com","Roth","1-668-825-872");
@@ -24,15 +18,10 @@ INSERT INTO clientes (apellido,email,nombre,telefono) VALUES ("Watson, Hasad U."
 
 /*insert servicios*/
 INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Corte de Cabello",3000);
-INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Perfilado de barba",3000);
-INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Afeitado al ras",3000);
-INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Afeitado Clásico",3000);
-INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Arreglo de Barba",4000);
-INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Degradado",4000);
-INSERT INTO servicio (duracion,nombre,precio) VALUES (30,"Corte Clásico + Barba",7000);
-INSERT INTO servicio (duracion,nombre,precio) VALUES (30,"Rasurado de Cabeza + Barba",7000);
-INSERT INTO servicio (duracion,nombre,precio) VALUES (30,"Degradado + Barba",8000);
-INSERT INTO servicio (duracion,nombre,precio) VALUES (0,"Gift Card",0);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Alisado ",3000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Ondulado de Pestañas",3000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Limpieza Facial Profunda",3000);
+INSERT INTO servicio (duracion,nombre,precio) VALUES (20,"Radiofrecuencia Facial",4000);
 
 
 /*Creamos usuarios y sus roles*/

@@ -7710,7 +7710,7 @@ h1, h2, h3, h4, h5,
 .ftco-intro .wrap {
   width: 100%; }
   .ftco-intro .wrap .info {
-    background: #000;
+    background: #6410af;
     padding: 30px; }
     @media (min-width: 768px) {
       .ftco-intro .wrap .info {
@@ -7720,7 +7720,7 @@ h1, h2, h3, h4, h5,
       margin-bottom: 0; }
   .ftco-intro .wrap .social {
     width: 35%;
-    background: #ce9c6b; }
+    background: #efd137; }
     @media (max-width: 767.98px) {
       .ftco-intro .wrap .social {
         width: 100%; } }

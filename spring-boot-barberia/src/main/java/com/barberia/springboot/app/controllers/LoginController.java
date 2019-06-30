@@ -17,7 +17,7 @@ public class LoginController {
 		
 		if(principal != null) {
 			flash.addFlashAttribute("info","Hola ya haz iniciado ssesion anteriormente");
-			return "redirect:/";
+			return "redirect:/personal/dashboard";
 		}
 		
 		if(error != null) {

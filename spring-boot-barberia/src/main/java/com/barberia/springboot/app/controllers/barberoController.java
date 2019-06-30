@@ -25,7 +25,7 @@ import com.barberia.springboot.app.models.service.IBarberoService;
 
 @Secured("ROLE_ADMIN")
 @Controller
-@RequestMapping("/barbero")
+@RequestMapping("/personal")
 @SessionAttributes("barbero")
 public class barberoController {
 	
@@ -35,9 +35,14 @@ public class barberoController {
 	
 	@GetMapping(value = "/listar")
 	public String listar(Model model) {
-		model.addAttribute("titulo", "Listado de barberos");
+		model.addAttribute("titulo", "Listado de personal");
 		model.addAttribute("barberos", barberoService.findAll());
-		return "barbero/listar";
+		return "personal/listar";
+	}
+	@GetMapping(value = "/dashboard")
+	public String principal(Model model) {
+		
+		return "personal/dashboard";
 	}
 	
 
@@ -47,7 +52,7 @@ public class barberoController {
 		Barbero barbero = new Barbero();
 		model.put("barbero", barbero);
 		model.put("titulo", "Crear barbero");
-		return "barbero/form";
+		return "personal/form";
 	}
 	
 	
@@ -60,15 +65,15 @@ public class barberoController {
 			barbero = barberoService.findOne(id);
 			if(barbero == null) {
 				flash.addFlashAttribute("error", "El ID del barbero no existe en la BBDD!");
-				return "redirect:/barbero/listar";
+				return "redirect:/personal/listar";
 			}
 		} else {
 			flash.addFlashAttribute("error", "El ID del barbero no puede ser cero!");
-			return "redirect:/barbero/listar";
+			return "redirect:/personal/listar";
 		}
 		model.put("barbero", barbero);
 		model.put("titulo", "Editar Barbero");
-		return "barbero/form";
+		return "personal/form";
 	}
 	
 	
@@ -77,14 +82,14 @@ public class barberoController {
 
 		if (result.hasErrors()) {
 			model.addAttribute("titulo", "Crear Barbero");
-			return "barbero/form";
+			return "personal/form";
 		}
 		String mensajeFlash = (barbero.getId() != null)? "Barbero editado con éxito!" : "Barbero creado con éxito!";
 
 		barberoService.save(barbero);
 		status.setComplete();
 		flash.addFlashAttribute("success", mensajeFlash);
-		return "redirect:/barbero/listar";
+		return "redirect:/personal/listar";
 	}
 	
 
@@ -95,7 +100,7 @@ public class barberoController {
 			barberoService.delete(id);
 			flash.addFlashAttribute("success", "Barbero eliminado con éxito!");
 		}
-		return "redirect:/barbero/listar";
+		return "redirect:/personal/listar";
 	}
 
 }

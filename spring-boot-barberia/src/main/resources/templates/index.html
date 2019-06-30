@@ -42,7 +42,7 @@
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" th:href="@{/}">Style</a>
+			<a class="navbar-brand" th:href="@{/}"> EstetiCloud </a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -59,17 +59,8 @@
 					<li class="nav-item"><a th:href="@{#horarios}"
 						class="nav-link">Ver Horarios Disponibles</a></li>
 					<li class="nav-item">
-					<li sec:authorize="isAuthenticated()">
-						<!-- <script type="text/javascript">
-	               window.location = "/barbero/listar";
-	          </script>--> <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/barbero/listar}"
-						class="btn btn-primary py-3 px-5">Ir a la Gestión de la Barbería Style</a>
-						
-						<a sec:authorize="hasRole('ROLE_USER')" th:href="@{/cliente/listar}"
-						class="btn btn-primary py-3 px-5">Ir a la Gestión de la Barbería Style</a>
-					</li>
-					<li sec:authorize="!isAuthenticated()"><a th:href="@{/login}"
-						class="btn btn-primary py-3 px-5">Iniciar Sesión</a></li>
+					<li class="nav-item"><a th:href="@{/login}"
+						class="nav-link">Iniciar Sesión</a></li>
 				</ul>
 			</div>
 		</div>
@@ -78,7 +69,7 @@
 
 
 	<div class="hero-wrap js-fullheight"
-		style="background-image: url('index/images/bg_2.jpg');"
+		style="background-image: url('index/images/centro-de-estetica-valencia.jpg');"
 		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -146,7 +137,7 @@
 			<div class="row justify-content-center mb-4">
 				<div class="col-md-7 heading-section ftco-animate text-center">
 					<h2 class="mb-4">
-						Bienvenido a la barbería <span>Style</span>
+						Bienvenido a <span>EstetiCloud</span>
 					</h2>
 					<p class="flip">
 						<span class="deg1"></span><span class="deg2"></span><span
@@ -156,12 +147,12 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="col-md-8 text-center ftco-animate">
-					<p>En La Barbería nos hacemos responsables del cuidado integral
-						masculino a través de un servicio de excelencia y arraigado en las
-						antiguas tradiciones, en un ambiente único e inspirado en las
-						clásicas barberías inglesas, con una atención de primer nivel más
+					<p>En EsteticCloud nos hacemos responsables del cuidado integral
+						femenino y masculino a través de un servicio de excelencia,
+						 en un ambiente único e inspirado en los
+						mejores centros de estetica, con una atención de primer nivel más
 						un amplio catálogo de productos con stock permanente. Experimenta,
-						descubre y vive junto a nosotros el arte de la barbería clásica.</p>
+						descubre y vive junto a nosotros.</p>
 				</div>
 			</div>
 		</div>
@@ -181,8 +172,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8">
+				<div class="col-md-1"></div>
+				<div class="col-md-5">
 					<div class="pricing-entry ftco-animate" th:each="servicio: ${servicios}">
 						<div class="d-flex text align-items-center">
 							<h3>
@@ -196,7 +187,19 @@
 					</div>
 					
 				</div>
-				<div class="col-md-2"></div>
+				<div class="col-md-5">
+			<div class="pricing-entry ftco-animate" th:each="servicio: ${servicios}">
+						<div class="d-flex text align-items-center">
+							<h3>
+								<span th:text="${servicio.nombre}"></span>
+							</h3>
+							<span class="price" th:text="'$'+${servicio.precio}"></span>
+						</div>
+						<div class="d-block" >
+							<p th:text="'Duración: '+${servicio.duracion}+' minutos'"></p>
+						</div>
+					</div>
+				</div>
 
 				
 			</div>
@@ -209,7 +212,7 @@
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-7 heading-section ftco-animate text-center">
-					<h2 class="mb-4">Nuestros Barberos</h2>
+					<h2 class="mb-4">Nuestros Especialistas</h2>
 					<p class="flip">
 						<span class="deg1"></span><span class="deg2"></span><span
 							class="deg3"></span>
@@ -223,7 +226,7 @@
 					th:each="barbero: ${barberos}">
 					<div class="staff">
 						<div class="img mb-4"
-							style="background-image: url(index/images/barber.jpg);"></div>
+							style="background-image: url(index/images/work-5.jpg);"></div>
 						<div class="info text-center">
 							<h3>
 								<a th:text="${barbero.nombre}+' '+${barbero.apellido}"></a>
@@ -257,9 +260,38 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6"></div>
+				<div class="col-lg-1"></div>
 
-				<div class="col-md-6"></div>
+				<div class="col-lg-10 mb-sm-4 ftco-animate">
+				<div class="table-responsive">
+				<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+    <th scope="col"></th>
+      <th scope="col">Lunes</th>
+      <th scope="col">Martes</th>
+      <th scope="col">Miercoles</th>
+      <th scope="col">Jueves</th>
+      <th scope="col">Viernes</th>
+      <th scope="col">Sabado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td></td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+      <td>9:00 - 20:00</td>
+	  <td>9:00 - 20:00</td>
+    </tr>
+   
+  </tbody>
+</table>
+</div>
+  </div>
+  <div class="col-lg-1"></div>
 			</div>
 		</div>
 	</section>
@@ -277,9 +309,8 @@
 		<div class="container">
 			<div class="row mb-5">
 
-				<div class="col-md-4"></div>
 
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">¿Tienes Preguntas? Contactanos</h2>
 						<div class="block-23 mb-3">
@@ -290,12 +321,17 @@
 								<li><a href="#"><span class="icon icon-phone"></span><span
 										class="text">000 (123) 456 7890</span></a></li>
 								<li><a href="#"><span class="icon icon-envelope"></span><span
-										class="text">info@style.com</span></a></li>
+										class="text">info@estetiCloud.com</span></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4"></div>
+				<div class="col-md-6">
+				<div class="wpb_gmaps_widget wpb_content_element">
+				<iframe width= "100%" height= "250" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.2547611696123!2d-70.65829608510903!3d-33.44266860449838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a6159aebd5%3A0x3f2931ad8ce6f7c0!2sHermanos+Amun%C3%A1tegui+92%2C+Santiago%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses-419!2scl!4v1511228892387">
+				</iframe>
+				</div>
+				</div>
 			</div>
 
 		</div>
