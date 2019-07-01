@@ -10,7 +10,7 @@
 		<!-- Logo -->
 		<a class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 			<span class="logo-mini"><b>G</b>BS</span> <!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"><b>Gestión </b>estetiCloud</span>
+			<span class="logo-lg"><b>Gestión </b>EstetiCloud</span>
 		</a>
 
 		<!-- Header Navbar -->
@@ -48,8 +48,8 @@
 								alt="User Image" >
 
 								<p>
-									<span  sec:authentication="name"> </span> <small>de
-										la barberia "Style"</small>
+									<span  sec:authentication="name"> </span> <small>del
+										centro de estética "EstetiCloud"</small>
 								</p></li>
 
 							<!-- Menu Footer-->
@@ -97,7 +97,7 @@
 
 			<!-- Sidebar Menu -->
 			<ul class="sidebar-menu" data-widget="tree">
-				<li class="header">Menu de Navegacion</li>
+				<li class="header">Menu de Navegación</li>
 				<li sec:authorize="hasRole('ROLE_ADMIN')"
 					th:classappend="${#httpServletRequest.getRequestURI() == '/barbero/listar' ? 'active':''}"><a
 					th:href="@{/personal/listar}"><i class="fa fa-address-book"></i> <span>Gestión
@@ -117,11 +117,11 @@
 				<li sec:authorize="hasRole('ROLE_ADMIN')"
 					th:classappend="${#httpServletRequest.getRequestURI() == '/servicios/listar' ? 'active':''}"><a
 					th:href="@{/ingreso/listar}"><i class="fa fa-address-book"></i><span>Gestión
-							de Ingresos</span></a></li>
+							de ingresos</span></a></li>
 				<li sec:authorize="hasRole('ROLE_ADMIN')"
 					th:classappend="${#httpServletRequest.getRequestURI() == '/servicios/listar' ? 'active':''}"><a
 					th:href="@{/egreso/listar}"><i class="fa fa-address-book"></i><span>Gestión
-							de Egreso</span></a></li>
+							de egreso</span></a></li>
 
 
 			</ul>
@@ -134,7 +134,7 @@
 	<footer th:fragment="footer" class="main-footer">
 		<!-- To the right -->
 		<!-- Default to the left -->
-		<strong>Copyright &copy; 2019 <a href="#">Tortugas Ninjas</a>.
+		<strong>Copyright &copy; 2019 <a href="#">EstetiCloud</a>.
 		</strong> Todos los derechos reservados.
 		
 	</footer>
